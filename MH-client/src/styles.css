@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --negro-secundario-fondo: #3b3b3b;
+}
+
+
+
+html,
+body {
+    height: 100vh;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+    padding: 1rem;
+    background-color: var(--gris-claro);
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+/* ================================================= */
+/* MEDIA QUERIES */
+/* ================================================= */
