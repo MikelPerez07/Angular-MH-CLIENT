@@ -1,0 +1,80 @@
+/* ================================================= */
+/* FIRST MOBILE */
+/* ================================================= */
+
+.weapon-container {
+    background-color: var(--black-terciary-bg);
+    color: white;
+
+    border: 0px;
+    box-shadow: 0px 0px 2px white;
+}
+
+.rarity-container {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 0.25rem;
+
+}
+
+.rarity1 {
+    color: var(--rarity1);
+    border-color: var(--rarity1);
+}
+
+.rarity2 {
+    color: var(--rarity2);
+    border-color: var(--rarity2);
+}
+
+.rarity3 {
+    color: var(--rarity3);
+    border-color: var(--rarity3);
+}
+
+.rarity4 {
+    color: var(--rarity4);
+    border-color: var(--rarity4);
+}
+
+.rarity5 {
+    color: var(--rarity5);
+    border-color: var(--rarity5);
+}
+
+.rarity6 {
+    color: var(--rarity6);
+    border-color: var(--rarity6);
+}
+
+.rarity7 {
+    color: var(--rarity7);
+    border-color: var(--rarity7);
+}
+
+.rarity8 {
+    color: var(--rarity8);
+    border-color: var(--rarity8);
+}
+
+/* ================================================= */
+/* MEDIA QUERIES */
+/* ================================================= */
+
+/* MAYOR O IGUAL DE 576PX (A PARTIR DE 575PX INCLUSIVE) - SMARTPHONES */
+@media only screen and (min-width:576px) {}
+
+
+/* MAYOR O IGUAL DE 768PX (A PARTIR DE 768PX INCLUSIVE) - SMARTPHONES GRANDES, TABLETS */
+@media only screen and (min-width:768px) {}
+
+
+
+/* MAYOR O IGUAL DE 992PX (A PARTIR DE 992PX INCLUSIVE) - PC PEQUEÑOS, LAPTOPS */
+@media only screen and (min-width:992px) {}
+
+/* MAYOR O IGUAL DE 1200PX (A PARTIR DE 1200PX INCLUSIVE) - PC GRANDES, TELEVISIONES */
+@media only screen and (min-width:1200px) {}

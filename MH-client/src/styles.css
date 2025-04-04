@@ -1,6 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-    --negro-secundario-fondo: #3b3b3b;
+    --black-secondary-bg: #3b3b3b;
+    --black-terciary-bg: #606060;
+
+    --rarity1: rgb(179, 179, 179);
+    --rarity2: white;
+    --rarity3: #b5d772;
+    --rarity4: #5baa79;
+    --rarity5: #96d6ef;
+    --rarity6: #6764d7;
+    --rarity7: #9164e8;
+    --rarity8: #f89a63;
 }
 
 
@@ -10,6 +20,7 @@ body {
     height: 100vh;
     font-family: "Roboto", sans-serif;
     font-size: 16px;
+    background-color: var(--black-secondary-bg);
 
 }
 

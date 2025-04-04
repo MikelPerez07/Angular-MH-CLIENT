@@ -1,9 +1,6 @@
-<div class="main-container">
+<div class="main-container d-flex flex-column align-items-center px-3">
     @for(weapon of weapons; track weapon.id){
     <!-- create a weaponCard for each weapon -->
-    <div>
-        <span>{{weapon.name}}</span>
-    </div>
     <app-weapon-card [weaponData]="weapon" />
     }
 
