@@ -3,28 +3,53 @@
 /* ================================================= */
 .main-container {
     width: 150px;
-    height: 20px;
-    border: 1px solid black;
+    height: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
-.red{
-    background-color: red;
+.sharpness-container {
+
+
+    height: 50%;
+    display: flex;
 }
-.orange{
+
+.sharpness-container>div {
+    height: 100%;
+
+}
+
+/* ================================================= */
+/* COLORS */
+/* ================================================= */
+/* Subject to change on the future*/
+.red {
+    background-color: red;
+
+
+}
+
+.orange {
     background-color: orange;
 }
-.green{
+
+.green {
     background-color: green;
 }
-.blue{
+
+.blue {
     background-color: blue;
 }
-.white{
+
+.white {
     background-color: white;
 }
-.purple{
+
+.purple {
     background-color: purple;
 }
+
 /* ================================================= */
 /* MEDIA QUERIES */
 /* ================================================= */

@@ -1,27 +1,53 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, NgModule, OnInit } from '@angular/core';
 import { WeaponSharpness } from '../../../core/models/entities';
-import { NgStyle } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-weapon-sharpness',
-  imports: [NgStyle],
+  imports: [CommonModule],
   templateUrl: './weapon-sharpness.component.html',
   styleUrl: './weapon-sharpness.component.css'
 })
-export class WeaponSharpnessComponent {
+export class WeaponSharpnessComponent implements OnInit {
+  ngOnInit(): void {
+    this.totalSharpness = this.getTotalSharpness(this.sharpnesses[this.sharpnesses.length - 1]);
+    this.sRed = this.getSharpnessPercent(this.totalSharpness, this.sharpnesses[0]?.red) + "%";
+    this.sOrange = this.getSharpnessPercent(this.totalSharpness, this.sharpnesses[0]?.orange) + "%";
+    this.sGreen = this.getSharpnessPercent(this.totalSharpness, this.sharpnesses[0]?.green) + "%";
+    this.sBlue = this.getSharpnessPercent(this.totalSharpness, this.sharpnesses[0]?.blue) + "%";
+    this.sWhite = this.getSharpnessPercent(this.totalSharpness, this.sharpnesses[0]?.white) + "%";
+    this.sPurple = this.getSharpnessPercent(this.totalSharpness, this.sharpnesses[0]?.purple) + "%";
+
+    this.sRedFinal = this.getSharpnessPercent(this.totalSharpness, this.sharpnesses[this.sharpnesses.length - 1]?.red) + "%";
+    this.sOrangeFinal = this.getSharpnessPercent(this.totalSharpness, this.sharpnesses[this.sharpnesses.length - 1]?.orange) + "%";
+    this.sGreenFinal = this.getSharpnessPercent(this.totalSharpness, this.sharpnesses[this.sharpnesses.length - 1]?.green) + "%";
+    this.sBlueFinal = this.getSharpnessPercent(this.totalSharpness, this.sharpnesses[this.sharpnesses.length - 1]?.blue) + "%";
+    this.sWhiteFinal = this.getSharpnessPercent(this.totalSharpness, this.sharpnesses[this.sharpnesses.length - 1]?.white) + "%";
+    this.sPurpleFinal = this.getSharpnessPercent(this.totalSharpness, this.sharpnesses[this.sharpnesses.length - 1]?.purple) + "%";
+
+  }
 
   @Input() sharpnesses: WeaponSharpness[] = [];
-  totalSharpness: number = this.getTotalSharpness(this.sharpnesses[0]);
-  sRed: string = this.getSharpnessPercent(this.totalSharpness, this.sharpnesses[0].red) + "%";
-  sOrange: string = this.getSharpnessPercent(this.totalSharpness, this.sharpnesses[0].orange) + "%";
-  sGreen: string = this.getSharpnessPercent(this.totalSharpness, this.sharpnesses[0].green) + "%";
-  sBlue: string = this.getSharpnessPercent(this.totalSharpness, this.sharpnesses[0].blue) + "%";
-  sWhite: string = this.getSharpnessPercent(this.totalSharpness, this.sharpnesses[0].white) + "%";
-  sPurple: string = this.getSharpnessPercent(this.totalSharpness, this.sharpnesses[0].purple) + "%";
+
+  totalSharpness: number;
+  sRed: string;
+  sOrange: string;
+  sGreen: string;
+  sBlue: string;
+  sWhite: string;
+  sPurple: string;
+
+  sRedFinal: string;
+  sOrangeFinal: string;
+  sGreenFinal: string;
+  sBlueFinal: string;
+  sWhiteFinal: string;
+  sPurpleFinal: string;
 
 
   getTotalSharpness(sharpness: WeaponSharpness): number {
-    return sharpness.red + sharpness.orange + sharpness.green + sharpness.blue + sharpness.white + sharpness.purple;
+    console.log("sharpness" + sharpness?.red);
+    return sharpness?.red + sharpness?.orange + sharpness?.green + sharpness?.blue + sharpness?.white + sharpness?.purple;
 
   }
 

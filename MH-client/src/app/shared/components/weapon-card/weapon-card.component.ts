@@ -7,13 +7,15 @@ import { WeaponSharpnessComponent } from '../weapon-sharpness/weapon-sharpness.c
 
 @Component({
   selector: 'app-weapon-card',
-  imports: [NoImageDirective, RarityPipe, NgClass,NgStyle,WeaponSharpnessComponent],
+  imports: [NoImageDirective, RarityPipe, NgClass, NgStyle, WeaponSharpnessComponent],
   templateUrl: './weapon-card.component.html',
   styleUrl: './weapon-card.component.css'
 })
 export class WeaponCardComponent {
 
   @Input() weaponData: Weapon;
+
+
 
 
 }
