@@ -1,0 +1,71 @@
+.icon {
+    display: inline-block;
+    width: 170px;
+    /* Tamaño de un icono individual */
+    height: 202px;
+    background-image: url('/assets/img/elementsIcon.png');
+    background-repeat: no-repeat;
+    transform: scale(0.15);
+    /* Cambia el tamaño al 50% */
+    transform-origin: top left;
+    margin-top: auto;
+    margin-left: auto;
+}
+
+.main-container {
+    width: 64px;
+    height: 64px;
+    padding: 1rem 1rem;
+}
+
+.icon-fire {
+    background-position: -0 0;
+}
+
+.icon-paralysis {
+    background-position: -170px 0;
+}
+
+.icon-poison {
+    background-position: -340px 0;
+}
+
+.icon-bleed {
+    background-position: 0 -202px;
+}
+
+.icon-dragon {
+    background-position: -170px -202px;
+}
+
+.icon-blast {
+    background-position: -340px -202px;
+}
+
+.icon-sleep {
+    background-position: -510px -202px;
+}
+
+.icon-ice {
+    background-position: 0 -404px;
+}
+
+.icon-water {
+    background-position: -170px -404px;
+}
+
+.icon-water {
+    background-position: -340px -404px;
+}
+
+.icon-thunder {
+    background-position: -510px -404px;
+}
+
+
+
+
+
+.icon-stun {
+    background-position: -3330px 0;
+}

@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-    --black-secondary-bg: #3b3b3b;
-    --black-terciary-bg: #606060;
+    --black-secondary-bg: #1b1b1b;
+    --black-terciary-bg: #323232;
+    --grey: #4f4c4c;
 
     --rarity1: rgb(179, 179, 179);
     --rarity2: white;
