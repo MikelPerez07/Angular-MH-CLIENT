@@ -75,7 +75,7 @@ export class WeaponsComponent implements OnInit, OnDestroy {
   ]
 
 
-  element: Element = { id: 1, name: 'Fire' };
+  element: Element = { id: 1, name: 'water' };
   ///////////////////////
 
   getData(): void {

@@ -2,7 +2,7 @@
     display: inline-block;
     width: 170px;
     /* Tamaño de un icono individual */
-    height: 202px;
+    height: 170px;
     background-image: url('/assets/img/elementsIcon.png');
     background-repeat: no-repeat;
     transform: scale(0.15);
@@ -31,35 +31,35 @@
 }
 
 .icon-bleed {
-    background-position: 0 -202px;
+    background-position: 0 -173px;
 }
 
 .icon-dragon {
-    background-position: -170px -202px;
+    background-position: -170px -173px;
 }
 
 .icon-blast {
-    background-position: -340px -202px;
+    background-position: -340px -173px;
 }
 
 .icon-sleep {
-    background-position: -510px -202px;
+    background-position: -580px -173px;
 }
 
 .icon-ice {
-    background-position: 0 -404px;
+    background-position: 0 -346px;
 }
 
 .icon-water {
-    background-position: -170px -404px;
+    background-position: -170px -346px;
 }
 
 .icon-water {
-    background-position: -340px -404px;
+    background-position: -340px -346px;
 }
 
 .icon-thunder {
-    background-position: -510px -404px;
+    background-position: -580px -346px;
 }
 
 
