@@ -1,0 +1,72 @@
+/* ================================================= */
+/* FIRST MOBILE */
+/* ================================================= */
+.main-container {
+    padding: 1rem;
+    background-color: var(--black-secondary-bg);
+    border-radius: 10px;
+
+}
+
+h1 {
+    font-weight: bold;
+    color: white;
+}
+
+span {
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    width: fit-content;
+
+}
+
+.container-content>div:hover {
+
+    transform: translate(15px);
+    transition: ease 0.5s;
+
+
+
+}
+
+span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    /* Thickness of the line */
+    background-color: white;
+    /* Line color */
+    transition: width 0.3s ease;
+    /* Smooth transition effect */
+
+}
+
+span:hover::after {
+    width: 100%;
+    /* Expands the line to full width on hover */
+}
+
+/* ================================================= */
+/* MEDIA QUERIES */
+/* ================================================= */
+
+/* MAYOR O IGUAL DE 576PX (A PARTIR DE 575PX INCLUSIVE) - SMARTPHONES */
+@media only screen and (min-width:576px) {}
+
+
+/* MAYOR O IGUAL DE 768PX (A PARTIR DE 768PX INCLUSIVE) - SMARTPHONES GRANDES, TABLETS */
+@media only screen and (min-width:768px) {}
+
+
+
+/* MAYOR O IGUAL DE 992PX (A PARTIR DE 992PX INCLUSIVE) - PC PEQUEÑOS, LAPTOPS */
+@media only screen and (min-width:992px) {}
+
+/* MAYOR O IGUAL DE 1200PX (A PARTIR DE 1200PX INCLUSIVE) - PC GRANDES, TELEVISIONES */
+@media only screen and (min-width:1200px) {}

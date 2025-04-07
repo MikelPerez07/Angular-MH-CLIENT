@@ -22,4 +22,7 @@ export class WeaponService {
     return this._http.get<Weapon[]>(GLOBAL.url_weapons);
   }
 
+  getWeaponById(id: number): Observable<Weapon> {
+    return this._http.get<Weapon>(GLOBAL.url_weapon + id);
+  }
 }

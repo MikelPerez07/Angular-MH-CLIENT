@@ -13,11 +13,18 @@ export interface Weapon {
     craftable: number;
     upgradeMaterials: Material[];
     craftingMaterials: Material[];
-    element: Element;
+    elementData?: WeaponElement;
     crafting?: Crafting;
     icon?: string;
     image?: string;
 
+}
+
+export interface WeaponElement {
+    id?: number;
+    damage: number;
+    hidden: number;
+    element: Element;
 }
 
 export interface Element {

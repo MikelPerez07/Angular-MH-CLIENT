@@ -1,6 +1,6 @@
-<div class="main-container">
-  <div class="card mb-3 weapon-container" style="max-width: 740px;">
-    <div class="row g-0">
+<div class="main-container px-0" [routerLink]="['/weapon-data',weaponData.id]">
+  <div class="card mb-3 weapon-container" style="max-width: 1000px;">
+    <div class="row g-0 align-items-center">
       <div class="col-md-2">
         <img appNoImage src="..." class="img-fluid rounded-start h-100" alt="...">
       </div>
@@ -16,10 +16,17 @@
             <span>{{weaponData.displayAttack}}</span>
           </div>
           <div class="vertical-separator"></div>
-          <app-element-icon [element]="weaponData.element"
-            class="d-flex flex-column align-items-center"></app-element-icon>
+          @if(weaponData?.elementData){
+          <div class="d-flex flex-row align-items-center position-relative ">
+            <app-element-icon [element]="weaponData.elementData!.element"
+              class="d-flex flex-column align-items-center"></app-element-icon>
+            <span>{{weaponData.elementData!.damage}}</span>
+            <div [ngClass]="{
+              'layer': weaponData.elementData!.hidden == 1
+            }"></div>
+          </div>
           <div class="vertical-separator"></div>
-
+          }
           <div class="rarity-container " [ngClass]="{
                     'rarity1': weaponData.rarity === 1,
                      'rarity2': weaponData.rarity === 2,

@@ -1,7 +1,7 @@
 import { Component, inject, Input, OnDestroy, OnInit } from '@angular/core';
 import { WeaponService } from '../../../core/services/weapon.service';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { Weapon, WeaponType, MotionValue, WeaponSharpness, Element } from '../../../core/models/entities';
+import { Weapon, WeaponType, MotionValue, WeaponSharpness, Element, WeaponElement } from '../../../core/models/entities';
 import { Subscription } from 'rxjs';
 import { WeaponCardComponent } from '../../../shared/components/weapon-card/weapon-card.component';
 
@@ -74,8 +74,10 @@ export class WeaponsComponent implements OnInit, OnDestroy {
     { id: 5, sharpnessLevel: 5, red: 10, orange: 20, green: 30, blue: 40, white: 50, purple: 80 },
   ]
 
-
   element: Element = { id: 1, name: 'water' };
+
+  weaponElement: WeaponElement = { id: 1, damage: 80, hidden: 1, element: this.element };
+
   ///////////////////////
 
   getData(): void {
@@ -129,8 +131,9 @@ export class WeaponsComponent implements OnInit, OnDestroy {
         craftable: 1,
         upgradeMaterials: [],
         craftingMaterials: [],
-        element: this.element,
+        elementData: this.weaponElement,
       }
     ];
+    console.log(this.weapons[0]);
   }
 }

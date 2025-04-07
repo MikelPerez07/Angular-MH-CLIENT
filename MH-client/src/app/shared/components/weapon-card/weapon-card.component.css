@@ -3,12 +3,26 @@
 /* ================================================= */
 
 .weapon-container {
-    background-color: var(--black-terciary-bg);
+    background-color: var(--black-secondary-bg);
     color: white;
 
     border: 0px;
 
 }
+
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black-secondary-bg);
+    opacity: 0.5;
+
+    /* Oscuridad ajustable */
+    z-index: 1;
+}
+
 
 .rarity-container {
     position: absolute;
