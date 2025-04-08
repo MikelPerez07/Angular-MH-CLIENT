@@ -1,5 +1,37 @@
 export interface Monster {
+    id?: number;
+    name: string;
+    type: MonsterType;
+    species: MonsterSpecies;
+    elements: Element[];
+    ailments: Ailment[];
+    locations: Location[];
+    icon: MonsterIcon;
 
+}
+
+export interface Ailment {
+    id?: number;
+    name: string;
+    description: string;
+
+}
+
+export interface MonsterSpecies {
+    id?: number;
+    species: string;
+
+}
+
+export interface MonsterType {
+    id?: number;
+    type: string;
+
+}
+
+export interface MonsterIcon {
+    id?: number;
+    name: string;
 }
 
 export interface Weapon {
@@ -98,5 +130,23 @@ export interface Skill {
 }
 
 export interface Location {
+
+}
+
+export interface Quest {
+    id?: number;
+    name: string;
+    type: QuestType;
+    description: string;
+    questRank: number;
+    successCondition: string;
+    location: Location;
+    monsters: Monster[];
+
+}
+
+export interface QuestType {
+    id?:number;
+    type:string;
 
 }

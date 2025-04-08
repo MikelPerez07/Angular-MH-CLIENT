@@ -1,0 +1,5 @@
+.main-container {
+    border-radius: 15px;
+    padding: 1rem;
+    background-color: var(--black-secondary-bg);
+}
