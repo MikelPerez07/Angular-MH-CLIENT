@@ -7,4 +7,10 @@ export const GLOBAL = {
     url_monster: URL_BASE + "monster/",
 
     url_monster_icon: URL_BASE + "media/monster-icon/",
+
+    url_quests: URL_BASE + "quests",
+    url_quest: URL_BASE + "quest/",
+    url_quests_monster: URL_BASE + "quests/monster/",
+
+
 }

@@ -12,12 +12,16 @@ export class QuestService {
   private _http: HttpClient = inject(HttpClient);
 
   getQuestById(id: number): Observable<Quest> {
-    return this._http.get<Quest>(GLOBAL.url_monster + id);
+    return this._http.get<Quest>(GLOBAL.url_quest + id);
   }
 
-  getAllMonsters(): Observable<Quest[]> {
-    return this._http.get<Quest[]>(GLOBAL.url_monsters);
+  getAllQuests(): Observable<Quest[]> {
+    return this._http.get<Quest[]>(GLOBAL.url_quests);
   }
 
-  
+  getQuestsByMonsterId(id: number): Observable<Quest[]> {
+    return this._http.get<Quest[]>(GLOBAL.url_quests_monster + id);
+  }
+
+
 }

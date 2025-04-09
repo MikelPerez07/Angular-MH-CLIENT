@@ -2,18 +2,24 @@
 
     <div class="table">
 
-        <table class=" table table-bordered table-info">
+        <table class=" table table-dark">
             <thead>
                 <th>Type</th>
                 <th>Name</th>
-                <th>monsters</th>
-                <th>Quest rank</th>
+                <th>Description</th>
+                <th >Quest rank</th>
                 <th>Location</th>
             </thead>
-
+            @for(quest of quests; track quest.id){
             <tr>
-                
+                <td>{{quest.type.type}}</td>
+                <td>{{quest.name}}</td>
+                <td>{{quest.description}}</td>
+                <td class="text-center ">{{quest.questRank}}</td>
+                <td class="text-center">{{quest.location.name}}</td>
+
             </tr>
+            }
 
         </table>
 

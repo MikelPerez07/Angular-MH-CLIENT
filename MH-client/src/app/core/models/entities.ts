@@ -4,10 +4,18 @@ export interface Monster {
     type: MonsterType;
     species: MonsterSpecies;
     elements: Element[];
+    weaknesses:MonsterWeakness[];
     ailments: Ailment[];
     locations: Location[];
     icon: MonsterIcon;
 
+}
+
+export interface MonsterWeakness{
+    id?:number;
+    element:Element;
+    stars:number;
+    weaknessCondition:string;
 }
 
 export interface Ailment {
@@ -130,7 +138,9 @@ export interface Skill {
 }
 
 export interface Location {
-
+    id?: number;
+    name: string;
+    zoneCount: number;
 }
 
 export interface Quest {
@@ -146,7 +156,7 @@ export interface Quest {
 }
 
 export interface QuestType {
-    id?:number;
-    type:string;
+    id?: number;
+    type: string;
 
 }

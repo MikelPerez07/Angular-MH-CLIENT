@@ -60,6 +60,16 @@ h3 {
     padding: 0;
 }
 
+.main-container {
+    background-color: var(--black-secondary-bg);
+    padding: 0.5rem;
+    border-radius: 15px;
+}
+
+.star {
+    color: yellow;
+}
+
 /* ================================================= */
 /* MEDIA QUERIES */
 /* ================================================= */

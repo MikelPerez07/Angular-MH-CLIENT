@@ -1,8 +1,39 @@
-<div class="main-container">
+<div class="main-container ">
 
+    @if(dataLoaded){
+    <div class="monster-data d-flex gap-3 align-items-md-center align-items-start flex-md-row flex-column p-2">
+        <div>
+            <img [src]="url" alt="" class="monster-image">
+        </div>
+        <div class="d-flex flex-column gap-3">
+            <div class="d-flex flex-row gap-3">
+                <div class="d-flex flex-column">
+                    <span>Name</span>
+                    <span>{{monster.name}}</span>
+                </div>
+                <div class="d-flex flex-column">
+                    <span>Name</span>
+                    <span>{{monster.species}}</span>
+                </div>
+            </div>
+        </div>
 
-    
+        <div class="d-flex flex-column">
+            <span>Weaknesses</span>
+            @for(weakness of monster.weaknesses; track weakness.id){
+            <div class="d-flex gap-2">
+                <span>{{weakness.element}}</span>
+                @for( i of [].constructor(weakness.stars); track $index){
+                <span><i class="fa-solid fa-star star"></i></span>
+                }
+            </div>
+            }
 
+        </div>
+    </div>
+    }
+
+    <app-quests [monsterId]="monsterId" />
 
 
 
