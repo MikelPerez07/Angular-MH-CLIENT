@@ -3,22 +3,13 @@
     width: 170px;
     /* Tamaño de un icono individual */
     height: 170px;
-    background-image: url('/assets/img/elementsIcon.png');
-    background-repeat: no-repeat;
-    transform: translate(10px, 10px);
 
-    transform: scale(0.15) translate(50%, 30%);
-    /* Cambia el tamaño al 50% */
-    transform-origin: top left;
-    margin-top: auto;
-    margin-left: auto;
 }
 
 .main-container {
-    width: 64px;
-    height: 64px;
-    padding: 0.5rem 0.5rem;
 
+    background-color: transparent;
+    padding: 0;
 }
 
 .icon-fire {

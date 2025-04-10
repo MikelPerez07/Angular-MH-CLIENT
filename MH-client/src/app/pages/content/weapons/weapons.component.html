@@ -1,5 +1,14 @@
-<div class="main-container d-flex flex-column align-items-center px-3">
-    @for(weapon of weapons; track weapon.id){
+<div class=" main-container  d-flex flex-column align-items-stretch gap-3" style="width: 100%; flex: 1;">
+    <div class="d-flex gap-2 justify-content-center icons-container">
+
+        @for(i of [].constructor(12);track $index){
+        <div class="icon-container" (click)="filterWeaponsByType($index+1)"
+            [ngClass]="{'active': $index === actualWeapon-1 }"><img class="icon"
+                src="assets/img/weapon_type_{{$index}}.png" alt="Weapon type icon"></div>
+        }
+
+    </div>
+    @for(weapon of weaponsFiltered; track weapon.id){
     <!-- create a weaponCard for each weapon -->
     <app-weapon-card [weaponData]="weapon" />
     }

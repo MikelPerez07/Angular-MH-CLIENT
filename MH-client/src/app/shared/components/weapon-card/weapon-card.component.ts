@@ -6,10 +6,11 @@ import { NgClass, NgStyle } from '@angular/common';
 import { WeaponSharpnessComponent } from '../weapon-sharpness/weapon-sharpness.component';
 import { ElementIconComponent } from '../element-icon/element-icon.component';
 import { RouterLink } from '@angular/router';
+import { EquipmentSlotComponent } from '../equipment-slot/equipment-slot.component';
 
 @Component({
   selector: 'app-weapon-card',
-  imports: [NoImageDirective, RarityPipe, NgClass, NgStyle, WeaponSharpnessComponent, ElementIconComponent,RouterLink],
+  imports: [NoImageDirective, RarityPipe, NgClass, NgStyle, WeaponSharpnessComponent, ElementIconComponent,RouterLink,EquipmentSlotComponent],
   templateUrl: './weapon-card.component.html',
   styleUrl: './weapon-card.component.css'
 })

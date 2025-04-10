@@ -25,6 +25,7 @@ export class WeaponSharpnessComponent implements OnInit {
     this.sWhiteFinal = this.getSharpnessPercent(this.totalSharpness, this.sharpnesses[this.sharpnesses.length - 1]?.white) + "%";
     this.sPurpleFinal = this.getSharpnessPercent(this.totalSharpness, this.sharpnesses[this.sharpnesses.length - 1]?.purple) + "%";
 
+    console.log(this.sharpnesses)
   }
 
   @Input() sharpnesses: WeaponSharpness[] = [];

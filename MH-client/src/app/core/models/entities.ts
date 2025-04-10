@@ -4,18 +4,18 @@ export interface Monster {
     type: MonsterType;
     species: MonsterSpecies;
     elements: Element[];
-    weaknesses:MonsterWeakness[];
+    weaknesses: MonsterWeakness[];
     ailments: Ailment[];
     locations: Location[];
     icon: MonsterIcon;
 
 }
 
-export interface MonsterWeakness{
-    id?:number;
-    element:Element;
-    stars:number;
-    weaknessCondition:string;
+export interface MonsterWeakness {
+    id?: number;
+    element: Element;
+    stars: number;
+    weaknessCondition: string;
 }
 
 export interface Ailment {
@@ -53,18 +53,25 @@ export interface Weapon {
     craftable: number;
     upgradeMaterials: Material[];
     craftingMaterials: Material[];
-    elementData?: WeaponElement;
+    elementalDamage?: WeaponElement;
     crafting?: Crafting;
     icon?: string;
     image?: string;
+    skills: Rank[];
+    slots:WeaponSlot;
 
 }
-
+export interface WeaponSlot {
+    id?: number;
+    slot1: number;
+    slot2: number;
+    slot3: number;
+}
 export interface WeaponElement {
     id?: number;
     damage: number;
     hidden: number;
-    element: Element;
+    elementalDamage: Element;
 }
 
 export interface Element {
@@ -134,6 +141,17 @@ export interface Charm {
 }
 
 export interface Skill {
+    id?: number;
+    name: string;
+    description: string;
+
+}
+
+export interface Rank {
+    id?: number;
+    description: string;
+    level: number;
+    skill: Skill;
 
 }
 

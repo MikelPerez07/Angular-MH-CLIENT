@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Element } from '../../../core/models/entities';
 
 @Component({
@@ -7,8 +7,14 @@ import { Element } from '../../../core/models/entities';
   templateUrl: './element-icon.component.html',
   styleUrl: './element-icon.component.css'
 })
-export class ElementIconComponent {
+export class ElementIconComponent implements OnInit {
+  ngOnInit(): void {
+    console.log("elemento " + this.element);
+  }
 
-  @Input() element: Element;
+  elements: string[] = ["fire", "water", "thunder", "ice", "dragon", "poison", "sleep", "paralysis", "blastblight"]
+  @Input() element: number;
+
+
 
 }

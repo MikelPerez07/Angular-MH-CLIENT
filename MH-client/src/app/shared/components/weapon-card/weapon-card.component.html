@@ -1,46 +1,63 @@
-<div class="main-container px-0" [routerLink]="['/weapon-data',weaponData.id]">
-  <div class="card mb-3 weapon-container" style="max-width: 1000px;">
+<div class="main-container px-0 position-relative" [routerLink]="['/weapon-data',weaponData.id]">
+  <div class="card  weapon-container" style="max-width: 1000px;">
     <div class="row g-0 align-items-center">
       <div class="col-md-2">
-        <img appNoImage src="..." class="img-fluid rounded-start h-100" alt="...">
+        <img appNoImage src="..." class="img-fluid rounded-start h-100 px-3" alt="...">
       </div>
-      <div class="col-md-10 h-100 py-3">
-        <div class="d-flex flex-row align-items-center card-data gap-3 px-3">
+      <div class="col-md-10 h-100 py-1">
+        <div class="d-flex  flex-row align-items-center card-data gap-3 px-3">
+          <!-- Weapon name + Sharpness -->
           <div class="d-flex flex-column">
             <h5 class="card-title">{{weaponData.name}}</h5>
             <app-weapon-sharpness [sharpnesses]="weaponData.sharpnesses" />
           </div>
+          <!-- Weapon attack -->
           <div class="vertical-separator"></div>
           <div class="d-flex flex-column align-items-center">
             <span class="font-size-small">{{weaponData.rawAttack}}</span>
             <span>{{weaponData.displayAttack}}</span>
           </div>
           <div class="vertical-separator"></div>
-          @if(weaponData?.elementData){
+          <!-- Weapon element -->
+          @if(weaponData?.elementalDamage){
           <div class="d-flex flex-row align-items-center position-relative ">
-            <app-element-icon [element]="weaponData.elementData!.element"
+            <app-element-icon [element]="weaponData.elementalDamage!.id!"
               class="d-flex flex-column align-items-center"></app-element-icon>
-            <span>{{weaponData.elementData!.damage}}</span>
+            <span>{{weaponData.elementalDamage!.damage}}</span>
             <div [ngClass]="{
-              'layer': weaponData.elementData!.hidden == 1
+              'layer': weaponData.elementalDamage!.hidden == 1
             }"></div>
           </div>
           <div class="vertical-separator"></div>
           }
-          <div class="rarity-container " [ngClass]="{
-                    'rarity1': weaponData.rarity === 1,
-                     'rarity2': weaponData.rarity === 2,
-                    'rarity3': weaponData.rarity === 3,
-                     'rarity4': weaponData.rarity === 4,
-                    'rarity5': weaponData.rarity === 5,
-                     'rarity6': weaponData.rarity === 6,
-                    'rarity7': weaponData.rarity === 7,
-                     'rarity8': weaponData.rarity === 8,
-                  }">
-            <span>{{weaponData.rarity | rarity}}</span>
+
+          <!-- Weapon skills -->
+          <div class="d-flex flex-column">
+            @for(skill of weaponData.skills;track $index){
+            <!-- TODO  touching a skill will lead to the skill-details page -->
+            <a href="#">{{skill.skill.name}} +{{skill.level}}</a>
+            }
+
           </div>
+          <div class="vertical-separator"></div>
+
+          <!-- TODO DECORATION levels -->
+          <app-equipment-slot [slot]="weaponData.slots" />
+
         </div>
       </div>
     </div>
+  </div>
+  <div class="rarity-container " [ngClass]="{
+    'rarity1': weaponData.rarity === 1,
+     'rarity2': weaponData.rarity === 2,
+    'rarity3': weaponData.rarity === 3,
+     'rarity4': weaponData.rarity === 4,
+    'rarity5': weaponData.rarity === 5,
+     'rarity6': weaponData.rarity === 6,
+    'rarity7': weaponData.rarity === 7,
+     'rarity8': weaponData.rarity === 8,
+  }">
+    <span>{{weaponData.rarity | rarity}}</span>
   </div>
 </div>

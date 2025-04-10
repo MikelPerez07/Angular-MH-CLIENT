@@ -1,6 +1,10 @@
 /* ================================================= */
 /* FIRST MOBILE */
 /* ================================================= */
+.main-container {
+    background-color: var(--black-secondary-bg);
+    padding: 1rem 0.5rem
+}
 
 .weapon-container {
     background-color: var(--black-secondary-bg);
@@ -26,8 +30,8 @@
 
 .rarity-container {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 10px;
+    right: 10px;
     border-radius: 5px;
     border: 1px solid black;
     padding: 0.25rem;

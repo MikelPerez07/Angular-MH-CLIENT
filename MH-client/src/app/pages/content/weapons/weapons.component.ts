@@ -1,13 +1,14 @@
 import { Component, inject, Input, OnDestroy, OnInit } from '@angular/core';
 import { WeaponService } from '../../../core/services/weapon.service';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { Weapon, WeaponType, MotionValue, WeaponSharpness, Element, WeaponElement } from '../../../core/models/entities';
+import { Weapon, WeaponType, MotionValue, WeaponSharpness, Element, WeaponElement, Skill, Rank, WeaponSlot } from '../../../core/models/entities';
 import { Subscription } from 'rxjs';
 import { WeaponCardComponent } from '../../../shared/components/weapon-card/weapon-card.component';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-weapons',
-  imports: [WeaponCardComponent],
+  imports: [WeaponCardComponent, NgClass],
   templateUrl: './weapons.component.html',
   styleUrl: './weapons.component.css'
 })
@@ -35,10 +36,13 @@ export class WeaponsComponent implements OnInit, OnDestroy {
 
 
   weapons: Weapon[] = [];
+  weaponsFiltered: Weapon[] = [];
   weaponType: string;
+  actualWeapon: number = 0;
 
 
   ///////////////////////////
+  //Ej. data //
 
   motionValues: MotionValue[] = [
     { id: 1, name: 'Sword', stun: 10, exhaust: 20, hits: '5' },
@@ -74,16 +78,22 @@ export class WeaponsComponent implements OnInit, OnDestroy {
     { id: 5, sharpnessLevel: 5, red: 10, orange: 20, green: 30, blue: 40, white: 50, purple: 80 },
   ]
 
+
   element: Element = { id: 1, name: 'water' };
 
-  weaponElement: WeaponElement = { id: 1, damage: 80, hidden: 1, element: this.element };
+  weaponElement: WeaponElement = { id: 1, damage: 80, hidden: 1, elementalDamage: this.element };
+
+  skills: Rank[] = [{
+    id: 1, level: 3, description: "", skill: {
+      id: 2, description: "", name: ""
+    }
+  }]
+
+  slots: WeaponSlot = { id: 1, slot1: 1, slot2: 0, slot3: 0 };
 
   ///////////////////////
 
   getData(): void {
-
-
-
 
     this._suscripcion = this._route.params.subscribe({
       next: (params) => {
@@ -98,16 +108,18 @@ export class WeaponsComponent implements OnInit, OnDestroy {
     });
 
 
-    this._weaponsService.getWeaponByType(this.weaponType).subscribe({
+    this._weaponsService.getAllWeapons().subscribe({
       next: (data) => {
+        console.log("weapon data")
         this.weapons = data;
         console.log(this.weapons);
+        this.filterWeaponsByType(0);
+
       },
       error: (error) => {
         console.log(error);
         //this._router.navigate(['/error']);
-        this.putWeaponDataExample();
-        console.log(this.weapons);
+        // this.putWeaponDataExample();
 
       },
       complete: () => {
@@ -131,9 +143,21 @@ export class WeaponsComponent implements OnInit, OnDestroy {
         craftable: 1,
         upgradeMaterials: [],
         craftingMaterials: [],
-        elementData: this.weaponElement,
+        elementalDamage: this.weaponElement,
+        skills: this.skills,
+        slots: this.slots,
       }
     ];
     console.log(this.weapons[0]);
+  }
+
+
+  filterWeaponsByType(type: number) {
+    this.actualWeapon = type;
+    this.weaponsFiltered = this.weapons.filter(v => {
+      return v.type.id === this.actualWeapon;
+    });
+    console.log(this.weaponsFiltered);
+    console.log(this.weapons);
   }
 }
