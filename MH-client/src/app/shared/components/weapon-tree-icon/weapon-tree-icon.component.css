@@ -1,0 +1,95 @@
+.mat-raised-button {
+    background-color: orange;
+    /* Cambia el color del fondo del tooltip */
+    color: red;
+    /* Cambia el color del texto */
+    font-size: 14px;
+    /* Personaliza el tamaño de fuente */
+    border-radius: 4px;
+    /* Agrega bordes redondeados */
+    padding: 8px;
+    /* Ajusta el espacio interno */
+}
+
+.overlay {
+    position: relative;
+    height: 56px;
+    width: 56px;
+    border-radius: 10px;
+    color: white;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.active {
+    height: 150px !important;
+    width: 300px !important;
+}
+
+.overlay img {
+    position: absolute;
+    mix-blend-mode: multiply;
+    background-color: black;
+    border-radius: 10px;
+    height: 54px;
+    /* a little bit smaller than the overlay so that the border shows */
+    width: 54px;
+
+}
+
+.rarity1-icon {
+    color: var(--rarity1);
+    border-color: var(--rarity1);
+    background-color: var(--rarity1);
+
+}
+
+.rarity2-icon {
+    color: var(--rarity2);
+    background-color: var(--rarity2);
+    border-color: var(--rarity2);
+}
+
+.rarity3-icon {
+    color: var(--rarity3);
+    background-color: var(--rarity3);
+    border-color: var(--rarity3);
+
+}
+
+.rarity4-icon {
+    color: var(--rarity4);
+    background-color: var(--rarity4);
+    border-color: var(--rarity4);
+}
+
+.rarity5-icon {
+    color: var(--rarity5);
+    background-color: var(--rarity5);
+    border-color: var(--rarity5);
+}
+
+.rarity6-icon {
+    color: var(--rarity6);
+    background-color: var(--rarity6);
+    border-color: var(--rarity6);
+}
+
+.rarity7-icon {
+    color: var(--rarity7);
+    background-color: var(--rarity7);
+    border-color: var(--rarity7);
+}
+
+.rarity8-icon {
+    color: var(--rarity8);
+    background-color: var(--rarity8);
+    border-color: var(--rarity8);
+}
+
+::ng-deep .custom-tooltip {
+    /* your own custom styles here */
+    /* e.g. */
+    color: white;
+    background-color: black;
+}

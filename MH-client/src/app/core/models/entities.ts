@@ -51,6 +51,7 @@ export interface Weapon {
     displayAttack: number;
     sharpnesses: WeaponSharpness[];
     craftable: number;
+    previous?: Weapon;
     upgradeMaterials: Material[];
     craftingMaterials: Material[];
     elementalDamage?: WeaponElement;
@@ -58,7 +59,7 @@ export interface Weapon {
     icon?: string;
     image?: string;
     skills: Rank[];
-    slots:WeaponSlot;
+    slots: WeaponSlot;
 
 }
 export interface WeaponSlot {
@@ -83,7 +84,7 @@ export interface WeaponType {
     id?: number;
     damageType: DamageType;
     type: string;
-    motionValue: MotionValue;
+    motionValue: MotionValue[];
 
 }
 

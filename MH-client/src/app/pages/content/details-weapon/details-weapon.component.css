@@ -1,3 +1,85 @@
 .main-container {
     color: white;
 }
+
+th,
+td {
+    color: white;
+    border-color: white;
+}
+
+
+.weapon-image {
+    width: auto;
+    height: auto;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.horizontal-line {
+    position: absolute;
+    top: 50%;
+    /* Positions the line in the middle vertically */
+    width: 100%;
+    /* Spans the full width of the container */
+    border: none;
+    /* Removes default border */
+    height: 2px;
+    /* Sets thickness */
+    background-color: black;
+    /* Sets the color of the line */
+    transform: translateY(-50%);
+    /* Centers the line vertically */
+
+}
+
+.vertical-line {
+    position: absolute;
+    top: -50%;
+    /* Starts at the top */
+    left: 50%;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    /* Aligns perfectly to the center */
+    width: 2px;
+    /* Line thickness */
+    height: 100%;
+    /* Half of the viewport height */
+    background-color: black;
+    /* Color of the line */
+}
+
+.horizontalV-line {
+    position: absolute;
+    top: 50%;
+    /* Starts from the vertical center */
+    left: 100%;
+    /* Start at the center */
+    transform: translateX(-50%);
+    /* Aligns perfectly to the center */
+    width: 100%;
+    /* Extends to half the viewport width */
+    height: 2px;
+    /* Line thickness */
+    background-color: black;
+    /* Color of the line */
+}
+
+
+.horizontal-vertical-line {
+    offset: 50% 50%;
+    border: 1px solid black;
+    overflow: visible
+}
+
+.icon-size {
+    width: 56px;
+    height: 56px;
+}
+
+.active {
+    box-shadow: 0px 0px 2px 2px yellow;
+    border-radius: 10px;
+    z-index: 1;
+
+}

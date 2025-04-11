@@ -5,10 +5,11 @@ import { Weapon, WeaponType, MotionValue, WeaponSharpness, Element, WeaponElemen
 import { Subscription } from 'rxjs';
 import { WeaponCardComponent } from '../../../shared/components/weapon-card/weapon-card.component';
 import { NgClass } from '@angular/common';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-weapons',
-  imports: [WeaponCardComponent, NgClass],
+  imports: [WeaponCardComponent, NgClass, MatTooltipModule],
   templateUrl: './weapons.component.html',
   styleUrl: './weapons.component.css'
 })
@@ -58,16 +59,16 @@ export class WeaponsComponent implements OnInit, OnDestroy {
     { id: 11, name: 'Heavy Bowgun', stun: 60, exhaust: 70, hits: '15' }]
 
   weaponTypes: WeaponType[] = [
-    { id: 1, damageType: { id: 1, damageType: 'Slash' }, type: 'long sword', motionValue: this.motionValues[0] },
-    { id: 2, damageType: { id: 2, damageType: 'Blunt' }, type: 'Axe', motionValue: this.motionValues[1] },
-    { id: 3, damageType: { id: 3, damageType: 'Blunt' }, type: 'Hammer', motionValue: this.motionValues[2] },
-    { id: 4, damageType: { id: 4, damageType: 'Pierce' }, type: 'Lance', motionValue: this.motionValues[3] },
-    { id: 5, damageType: { id: 5, damageType: 'Pierce' }, type: 'Gunlance', motionValue: this.motionValues[4] },
-    { id: 6, damageType: { id: 6, damageType: 'Slash' }, type: 'Switch Axe', motionValue: this.motionValues[5] },
-    { id: 7, damageType: { id: 7, damageType: 'Slash' }, type: 'Charge Blade', motionValue: this.motionValues[6] },
-    { id: 8, damageType: { id: 8, damageType: 'Slash' }, type: 'Insect Glaive', motionValue: this.motionValues[7] },
-    { id: 9, damageType: { id: 9, damageType: 'Pierce' }, type: 'Bow', motionValue: this.motionValues[8] },
-    { id: 10, damageType: { id: 10, damageType: 'Pierce' }, type: 'Light Bowgun', motionValue: this.motionValues[9] },]
+    { id: 1, damageType: { id: 1, damageType: 'Slash' }, type: 'long sword', motionValue: this.motionValues },
+    { id: 2, damageType: { id: 2, damageType: 'Blunt' }, type: 'Axe', motionValue: this.motionValues },
+    { id: 3, damageType: { id: 3, damageType: 'Blunt' }, type: 'Hammer', motionValue: this.motionValues },
+    { id: 4, damageType: { id: 4, damageType: 'Pierce' }, type: 'Lance', motionValue: this.motionValues },
+    { id: 5, damageType: { id: 5, damageType: 'Pierce' }, type: 'Gunlance', motionValue: this.motionValues },
+    { id: 6, damageType: { id: 6, damageType: 'Slash' }, type: 'Switch Axe', motionValue: this.motionValues },
+    { id: 7, damageType: { id: 7, damageType: 'Slash' }, type: 'Charge Blade', motionValue: this.motionValues },
+    { id: 8, damageType: { id: 8, damageType: 'Slash' }, type: 'Insect Glaive', motionValue: this.motionValues },
+    { id: 9, damageType: { id: 9, damageType: 'Pierce' }, type: 'Bow', motionValue: this.motionValues },
+    { id: 10, damageType: { id: 10, damageType: 'Pierce' }, type: 'Light Bowgun', motionValue: this.motionValues },]
 
 
   sharpnesses: WeaponSharpness[] = [

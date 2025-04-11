@@ -52,45 +52,6 @@
     background-color: var(--grey);
 }
 
-.rarity1 {
-    color: var(--rarity1);
-    border-color: var(--rarity1);
-}
-
-.rarity2 {
-    color: var(--rarity2);
-    border-color: var(--rarity2);
-}
-
-.rarity3 {
-    color: var(--rarity3);
-    border-color: var(--rarity3);
-}
-
-.rarity4 {
-    color: var(--rarity4);
-    border-color: var(--rarity4);
-}
-
-.rarity5 {
-    color: var(--rarity5);
-    border-color: var(--rarity5);
-}
-
-.rarity6 {
-    color: var(--rarity6);
-    border-color: var(--rarity6);
-}
-
-.rarity7 {
-    color: var(--rarity7);
-    border-color: var(--rarity7);
-}
-
-.rarity8 {
-    color: var(--rarity8);
-    border-color: var(--rarity8);
-}
 
 /* ================================================= */
 /* MEDIA QUERIES */

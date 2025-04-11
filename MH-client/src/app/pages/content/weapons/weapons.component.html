@@ -1,9 +1,10 @@
 <div class=" main-container  d-flex flex-column align-items-stretch gap-3" style="width: 100%; flex: 1;">
     <div class="d-flex gap-2 justify-content-center icons-container">
 
-        @for(i of [].constructor(12);track $index){
-        <div class="icon-container" (click)="filterWeaponsByType($index+1)"
-            [ngClass]="{'active': $index === actualWeapon-1 }"><img class="icon"
+        @for(i of [].constructor(14);track $index){
+        <div class="icon-container example-button" (click)="filterWeaponsByType($index+1)"
+            [ngClass]="{'active': $index === actualWeapon-1 }" mat-raised-button matTooltip="Info about the action"
+            matTooltipClass="example-tooltip-uppercase" aria-label="Button that shows a red tooltip"><img class="icon"
                 src="assets/img/weapon_type_{{$index}}.png" alt="Weapon type icon"></div>
         }
 
