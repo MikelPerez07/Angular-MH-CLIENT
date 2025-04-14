@@ -1,13 +1,41 @@
 .main-container {
+    color: white !important;
+}
+
+
+
+
+/* Aplicar el color del indicador activo */
+.mat-tab-group .mat-ink-bar {
+    background-color: white;
+}
+
+/* Aplicar el color del divisor */
+.mat-tab-group {
+    border-bottom: 1px solid white;
+}
+
+div {
     color: white;
+}
+
+span {
+    color: white !important;
 }
 
 th,
+tr,
 td {
     color: white;
     border-color: white;
+    background-color: black;
 }
 
+.mat-column-hits,
+.mat-column-stun,
+.mat-column-exhaust {
+    text-align: center;
+}
 
 .weapon-image {
     width: auto;

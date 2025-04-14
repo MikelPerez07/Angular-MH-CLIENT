@@ -13,5 +13,7 @@ export const GLOBAL = {
     url_quest: URL_BASE + "quest/",
     url_quests_monster: URL_BASE + "quests/monster/",
 
+    url_skills: URL_BASE + "skills",
+
 
 }

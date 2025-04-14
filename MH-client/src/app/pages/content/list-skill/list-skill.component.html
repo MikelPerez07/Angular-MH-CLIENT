@@ -1,0 +1,14 @@
+<div class="main-container">
+
+    @if(dataLoaded){
+    <div class="skill-list">
+        @for(skill of skills; track skill.id){
+        <div class="skill-container d-flex flex-row gap-3">
+            <a href="#">{{skill.name}}</a>
+            <span>{{skill.description}}</span>
+        </div>
+        <div class="separator"></div>
+        }
+    </div>
+    }
+</div>
