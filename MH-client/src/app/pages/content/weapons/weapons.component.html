@@ -3,9 +3,8 @@
 
         @for(i of [].constructor(14);track $index){
         <div class="icon-container example-button" (click)="filterWeaponsByType($index+1)"
-            [ngClass]="{'active': $index === actualWeapon-1 }" mat-raised-button matTooltip="Info about the action"
-            matTooltipClass="example-tooltip-uppercase" aria-label="Button that shows a red tooltip"><img class="icon"
-                src="assets/img/weapon_type_{{$index}}.png" alt="Weapon type icon"></div>
+            [ngClass]="{'active': $index === actualWeapon-1 }" aria-label="Button that shows a red tooltip"><img
+                class="icon" src="assets/img/weapon_type_{{$index}}.png" alt="Weapon type icon"></div>
         }
 
     </div>
