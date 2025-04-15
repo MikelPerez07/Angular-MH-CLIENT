@@ -33,11 +33,13 @@ export class DetailsWeaponComponent implements OnInit, OnDestroy {
   weapon: Weapon;
   id: number;
 
+  weaponEj: Weapon;
 
   displayedColumns: string[] = ['name', 'hits', 'stun', 'exhaust'];
   dataSource: MotionValue[] = [];
 
   previousWeapons: Weapon[] = [];
+  weaponUpgrades?: Weapon[] = [];
   previousActualWeapon?: Weapon;
   indexedWeapons: { weapon: Weapon, index: number }[] = [];
 
@@ -64,7 +66,8 @@ export class DetailsWeaponComponent implements OnInit, OnDestroy {
       next: (data) => {
         this.weapon = data;
         this.dataSource = this.weapon.type.motionValue.sort((a, b) => a.id! - b.id!);
-        this.getPreviousWeapons(this.weapon);
+        this.getPreviousWeapons();
+        this.getUpgradeWeapons();
         console.log(this.weapon);
 
       },
@@ -76,7 +79,36 @@ export class DetailsWeaponComponent implements OnInit, OnDestroy {
 
   }
 
-  getPreviousWeapons(weapon: Weapon): void {
+  getUpgradeWeapons(): void {
+    this._weaponService.getUpgradeWeapons(this.id).subscribe({
+      next: (data) => {
+
+        this.weaponUpgrades = data.weaponUpgrades;
+
+
+      },
+      error: () => { },
+      complete: () => { }
+
+    })
+  }
+
+  getPreviousWeapons(): void {
+    this._weaponService.getPrevious(this.id).subscribe({
+      next: (data) => {
+
+        this.flatPreviousWeaponsArray(data);
+
+
+      },
+      error: () => { },
+      complete: () => { }
+
+    })
+  }
+
+
+  flatPreviousWeaponsArray(weapon: Weapon): void {
     let final: boolean = false;
     this.previousActualWeapon = weapon;
     while (!final) {

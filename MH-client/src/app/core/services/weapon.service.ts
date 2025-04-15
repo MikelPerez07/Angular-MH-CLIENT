@@ -26,7 +26,16 @@ export class WeaponService {
     return this._http.get<Weapon>(GLOBAL.url_weapon + id);
   }
 
-  getMotionValueByWeaponType(type:string):Observable<MotionValue>{
-    return this._http.get<MotionValue>(GLOBAL.url_motion_values+"weapon-type/"+type);
+  getMotionValueByWeaponType(type: string): Observable<MotionValue> {
+    return this._http.get<MotionValue>(GLOBAL.url_motion_values + "weapon-type/" + type);
+  }
+
+  getUpgradeWeapons(id: number): Observable<Weapon> {
+
+    return this._http.get<Weapon>(GLOBAL.url_weapon + id + "/upgrades");
+  }
+
+  getPrevious(id: number): Observable<Weapon> {
+    return this._http.get<Weapon>(GLOBAL.url_weapon + id + "/previous");
   }
 }

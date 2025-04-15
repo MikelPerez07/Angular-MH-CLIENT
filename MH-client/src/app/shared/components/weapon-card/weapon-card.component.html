@@ -21,11 +21,11 @@
           <!-- Weapon element -->
           @if(weaponData?.elementalDamage){
           <div class="d-flex flex-row align-items-center position-relative ">
-            <app-element-icon [element]="weaponData.elementalDamage!.id!"
+            <app-element-icon [element]="weaponData.element!.id!"
               class="d-flex flex-column align-items-center"></app-element-icon>
-            <span>{{weaponData.elementalDamage!.damage}}</span>
+            <span>{{weaponData.elementalDamage!}}</span>
             <div [ngClass]="{
-              'layer': weaponData.elementalDamage!.hidden == 1
+              'layer': weaponData.elementHidden == 1
             }"></div>
           </div>
           <div class="vertical-separator"></div>

@@ -144,7 +144,9 @@ export class WeaponsComponent implements OnInit, OnDestroy {
         craftable: 1,
         upgradeMaterials: [],
         craftingMaterials: [],
-        elementalDamage: this.weaponElement,
+        elementalDamage: 100,
+        element: this.element,
+        elementHidden: 0,
         skills: this.skills,
         slots: this.slots,
       }

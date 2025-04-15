@@ -52,14 +52,18 @@ export interface Weapon {
     sharpnesses: WeaponSharpness[];
     craftable: number;
     previous?: Weapon;
+    weaponUpgrades?: Weapon[];
     upgradeMaterials: Material[];
     craftingMaterials: Material[];
-    elementalDamage?: WeaponElement;
+    elementalDamage?: number;
+    element: Element;
+    elementHidden: number;
     crafting?: Crafting;
     icon?: string;
     image?: string;
     skills: Rank[];
     slots: WeaponSlot;
+
 
 }
 export interface WeaponSlot {

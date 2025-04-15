@@ -12,7 +12,6 @@ export class ElementIconComponent implements OnInit {
     console.log("elemento " + this.element);
   }
 
-  elements: string[] = ["fire", "water", "thunder", "ice", "dragon", "poison", "sleep", "paralysis", "blastblight"]
   @Input() element: number;
 
 

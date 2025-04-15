@@ -58,24 +58,53 @@
 
         <!-- Tab that shows the Weapon tree of the selected weapon -->
         <mat-tab label="Evolution tree">
-            <div class="d-flex flex-column gap-3 py-3">
-                @for(element of indexedWeapons; track $index){
-                <div class="d-flex flex-row">
-                    <div class=" icon-size d-flex flex-row" [ngStyle]="{'margin-left': calculateMargin($index)}">
+
+            <div class="d-flex flex-row gap-0">
+                <div class="d-flex flex-column gap-3 py-3">
+                    @for(element of indexedWeapons; track $index){
+                    <div class="d-flex flex-row gap-3">
+                        @for(i of [].constructor($index);track $index){
+                        <div class=" icon-size d-flex flex-row"></div>
+                        }
+                        <div class=" icon-size d-flex flex-row">
+                            @if($index != 0){
+                            <div class="position-relative icon-size gap-3">
+                                <div class="vertical-line"></div>
+                                <div class="horizontalV-line"></div>
+                            </div>
+                            }
+                        </div>
+                        <div [ngClass]="{'active': element.weapon.id===indexedWeapons[indexedWeapons.length-1].weapon.id}"
+                            style="z-index: 1;">
+                            <app-weapon-tree-icon [weapon]="element.weapon" />
+                        </div>
+                    </div>
+                    }
+                </div>
+
+                <div class="d-flex flex-column py-3 gap-3">
+                    @for(weapon of weaponUpgrades; track $index){
+                    @for(w of [].constructor(indexedWeapons.length-1);track $index){
+                    <div class=" icon-size d-flex flex-row"></div>
+                    }
+                    <div class="d-flex flex-row">
+
                         @if($index != 0){
                         <div class="position-relative icon-size">
                             <div class="vertical-line"></div>
                             <div class="horizontalV-line"></div>
                         </div>
+                        }@else{
+                        <div class="position-relative icon-size">
+                            <div class="horizontal-line"></div>
+                        </div>
                         }
+                        <div>
+                            <app-weapon-tree-icon [weapon]="weapon" style="margin-bottom: 1rem;" />
+                        </div>
                     </div>
-                    <div [ngClass]="{'active': element.weapon.id===indexedWeapons[indexedWeapons.length-1].weapon.id}"
-                        style="z-index: 1;">
-                        <app-weapon-tree-icon [weapon]="element.weapon" />
-                    </div>
-
+                    }
                 </div>
-                }
             </div>
         </mat-tab>
     </mat-tab-group>
