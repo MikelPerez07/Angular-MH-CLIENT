@@ -1,13 +1,13 @@
 <div class="main-container">
 
     <div class="table">
-
+        <!-- 
         <table class=" table table-dark">
             <thead>
                 <th>Type</th>
                 <th>Name</th>
                 <th>Description</th>
-                <th >Quest rank</th>
+                <th>Quest rank</th>
                 <th>Location</th>
             </thead>
             @for(quest of quests; track quest.id){
@@ -21,7 +21,51 @@
             </tr>
             }
 
+        </table> -->
+
+        <table mat-table [dataSource]="quests" class="mat-elevation-z8 my-3 motion-values-table">
+
+            <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+
+
+
+            <!-- Hits Column -->
+            <ng-container matColumnDef="type">
+                <th mat-header-cell *matHeaderCellDef> Type </th>
+                <td mat-cell *matCellDef="let element">{{element.type.type}}</td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name" class="white">
+                <th mat-header-cell *matHeaderCellDef>Name </th>
+                <td mat-cell *matCellDef="let element" class="td-start">{{element.name}} </td>
+            </ng-container>
+
+            <!-- Stun Column -->
+            <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef>Description </th>
+                <td mat-cell *matCellDef="let element" class="td-start">{{element.description}}</td>
+            </ng-container>
+
+            <!-- Exhaust Column -->
+            <ng-container matColumnDef="questRank">
+                <th mat-header-cell *matHeaderCellDef> Quest rank </th>
+                <td mat-cell *matCellDef="let element">{{element.questRank}}</td>
+            </ng-container>
+
+            <!-- Exhaust Column -->
+            <ng-container matColumnDef="location">
+                <th mat-header-cell *matHeaderCellDef>Location</th>
+                <td mat-cell *matCellDef="let element">{{element.location.name}}</td>
+            </ng-container>
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
+
+
 
     </div>
 

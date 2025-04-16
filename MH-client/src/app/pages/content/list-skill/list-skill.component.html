@@ -4,8 +4,12 @@
     <div class="skill-list">
         @for(skill of skills; track skill.id){
         <div class="skill-container d-flex flex-row gap-3">
-            <a href="#">{{skill.name}}</a>
-            <span>{{skill.description}}</span>
+            <div class="skill-name">
+                <a href="#">{{skill.name}}</a>
+            </div>
+            <div>
+                <span>{{skill.description}}</span>
+            </div>
         </div>
         <div class="separator"></div>
         }

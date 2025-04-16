@@ -1,7 +1,7 @@
 import { Component, inject, Input, OnDestroy, OnInit } from '@angular/core';
 import { WeaponService } from '../../../core/services/weapon.service';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { Weapon, WeaponType, MotionValue, WeaponSharpness, Element, WeaponElement, Skill, Rank, WeaponSlot } from '../../../core/models/entities';
+import { Weapon, WeaponType, MotionValue, WeaponSharpness, Element, Skill, Rank, WeaponSlot } from '../../../core/models/entities';
 import { Subscription } from 'rxjs';
 import { WeaponCardComponent } from '../../../shared/components/weapon-card/weapon-card.component';
 import { NgClass } from '@angular/common';
@@ -80,9 +80,7 @@ export class WeaponsComponent implements OnInit, OnDestroy {
   ]
 
 
-  element: Element = { id: 1, name: 'water' };
-
-  weaponElement: WeaponElement = { id: 1, damage: 80, hidden: 1, elementalDamage: this.element };
+  element: Element = { id: 1, element: 'water' };
 
   skills: Rank[] = [{
     id: 1, level: 3, description: "", skill: {

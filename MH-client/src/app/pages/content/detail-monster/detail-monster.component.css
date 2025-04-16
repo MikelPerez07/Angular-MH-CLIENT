@@ -6,3 +6,24 @@
 .main-container {
     color: white;
 }
+
+.monster-data {
+    background-color: var(--black-secondary-bg);
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.weakness-stars {
+    width: 60px;
+}
+
+
+
+th,
+tr,
+td {
+    color: white;
+    border-color: white;
+    background-color: var(--black-secondary-bg);
+    text-align: center;
+}

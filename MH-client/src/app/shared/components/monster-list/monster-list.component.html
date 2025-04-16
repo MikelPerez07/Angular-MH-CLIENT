@@ -1,8 +1,10 @@
 <div class="main-container">
     <div class="d-flex gap-3 flex-wrap flex-row">
+        @if(dataLoaded){
         @for(monster of monsters; track $index){
         <app-monster-icon [monsterData]="monster" [routerLink]="['/monster', monster.id]"
-        routerLinkActive="router-link-active"/>
+            routerLinkActive="router-link-active" />
+        }
         }
     </div>
 </div>

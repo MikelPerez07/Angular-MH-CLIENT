@@ -3,7 +3,7 @@ import { MonsterIconComponent } from '../monster-icon/monster-icon.component';
 import { MonsterService } from '../../../core/services/monster.service';
 import { Monster } from '../../../core/models/entities';
 import { monsterIconData } from '../../../core/models/auxiliaries';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-monster-list',
@@ -16,7 +16,14 @@ export class MonsterListComponent implements OnInit {
     this.getData();
   }
 
+  ////////////////////////////
+  nPhase = 1;
+  actualPhase = 0;
+  dataLoaded = false;
+  ////////////////////////////
+
   private _monsterService: MonsterService = inject(MonsterService);
+  private _router : Router = inject(Router)
 
   monsters: monsterIconData[] = [];
 
@@ -35,9 +42,17 @@ export class MonsterListComponent implements OnInit {
         });
         console.log(this.monsters);
       },
-      error: () => { },
-      complete: () => { }
+      error: () => {this._router.navigate(['/error'])},
+      complete: () => { this.loadData()}
     })
+  }
+
+
+  loadData(){
+    this.actualPhase ++;
+    if(this.actualPhase === this.nPhase){
+      this.dataLoaded = true;
+    }
   }
 
 }

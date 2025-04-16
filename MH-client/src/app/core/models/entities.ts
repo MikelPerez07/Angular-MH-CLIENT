@@ -3,12 +3,26 @@ export interface Monster {
     name: string;
     type: MonsterType;
     species: MonsterSpecies;
+    hitZones: HitZone[];
     elements: Element[];
     weaknesses: MonsterWeakness[];
     ailments: Ailment[];
     locations: Location[];
     icon: MonsterIcon;
 
+}
+
+export interface HitZone{
+    id?:number;
+    hitZone:string;
+    sever:number;
+    blunt:number;
+    shot:number;
+    fire:number;
+    water:number;
+    thunder:number;
+    ice:number;
+    dragon:number;
 }
 
 export interface MonsterWeakness {
@@ -72,16 +86,11 @@ export interface WeaponSlot {
     slot2: number;
     slot3: number;
 }
-export interface WeaponElement {
-    id?: number;
-    damage: number;
-    hidden: number;
-    elementalDamage: Element;
-}
+
 
 export interface Element {
     id?: number;
-    name: string;
+    element: string;
 }
 
 export interface WeaponType {

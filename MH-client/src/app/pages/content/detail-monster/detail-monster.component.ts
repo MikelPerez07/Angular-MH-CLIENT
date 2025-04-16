@@ -5,10 +5,11 @@ import { MonsterService } from '../../../core/services/monster.service';
 import { QuestsComponent } from '../../../shared/components/quests/quests.component';
 import { Monster } from '../../../core/models/entities';
 import { GLOBAL } from '../../../core/environments/global';
+import { MatTableModule } from '@angular/material/table';
 
 @Component({
   selector: 'app-detail-monster',
-  imports: [QuestsComponent],
+  imports: [QuestsComponent, MatTableModule],
   templateUrl: './detail-monster.component.html',
   styleUrl: './detail-monster.component.css'
 })
@@ -31,6 +32,9 @@ export class DetailMonsterComponent implements OnInit {
   dataLoaded: boolean = false;
   ////
 
+  displayedColumns: string[] = ['name', 'sever', 'blunt', 'shot', "fire", "water", "thunder", "ice", "dragon"];
+
+
   private _routerSubscription: Subscription;
   private _route: ActivatedRoute = inject(ActivatedRoute);
   private _monsterService: MonsterService = inject(MonsterService);
@@ -45,9 +49,10 @@ export class DetailMonsterComponent implements OnInit {
 
     this._monsterService.getMonsterById(this.monsterId).subscribe({
       next: (data) => {
-        console.log(data.weaknesses[0]);
+
         this.monster = data;
-        this.monster.weaknesses[0].element.name;
+        console.log(this.monster)
+        console.log(data);
         this.url = GLOBAL.url_monster_icon + data.icon.name;
       },
       error: (error) => {

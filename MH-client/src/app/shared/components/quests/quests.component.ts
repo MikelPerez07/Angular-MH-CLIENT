@@ -1,10 +1,11 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { Quest } from '../../../core/models/entities';
 import { QuestService } from '../../../core/services/quest.service';
+import { MatTableModule } from '@angular/material/table';
 
 @Component({
   selector: 'app-quests',
-  imports: [],
+  imports: [MatTableModule],
   templateUrl: './quests.component.html',
   styleUrl: './quests.component.css'
 })
@@ -19,6 +20,7 @@ export class QuestsComponent implements OnInit {
 
   quests: Quest[] = [];
 
+  displayedColumns : string[] = ["type","name","description","questRank","location"]
 
 
 

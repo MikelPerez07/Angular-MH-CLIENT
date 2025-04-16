@@ -47,6 +47,10 @@ span::after {
 
 }
 
+.top-margin{
+    top:1rem;
+}
+
 span:hover::after {
     width: 100%;
     /* Expands the line to full width on hover */

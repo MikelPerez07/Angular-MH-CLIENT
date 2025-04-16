@@ -1,44 +1,144 @@
-<div class="main-container ">
+<div class="main-container d-flex flex-column gap-4 ">
+
 
     @if(dataLoaded){
-    <div class="monster-data d-flex gap-3 align-items-md-center align-items-start flex-md-row flex-column p-2">
+    <!-- MONSTER DETAILS -->
+    <div class="monster-data d-flex gap-3  align-items-start flex-md-row flex-column p-2">
         <div>
             <img [src]="url" alt="" class="monster-image">
         </div>
-        <div class="d-flex flex-column gap-3">
+        <div class="d-flex flex-column gap-3 pt-3">
             <div class="d-flex flex-row gap-3">
                 <div class="d-flex flex-column">
-                    <span>Name</span>
+                    <h5>Name</h5>
                     <span>{{monster.name}}</span>
                 </div>
                 <div class="d-flex flex-column">
-                    <span>Name</span>
+                    <h5>Species</h5>
                     <span>{{monster.species}}</span>
+                </div>
+            </div>
+            <div>
+                <h5>Elements & ailments</h5>
+                <div class="d-flex flex-row gap-3">
+                    @for(element of monster.elements;track $index){
+
+                    <div class="icon">
+                        <img src="assets/img/ElementType{{element.id}}.png" alt="">
+                    </div>
+                    }
                 </div>
             </div>
         </div>
 
-        <div class="d-flex flex-column">
-            <span>Weaknesses</span>
-            @for(weakness of monster.weaknesses; track weakness.id){
-            <div class="d-flex gap-2">
-                <span>{{weakness.element}}</span>
-                @for( i of [].constructor(weakness.stars); track $index){
-                <span><i class="fa-solid fa-star star"></i></span>
-                }
+        <div class="d-flex flex-column pt-3">
+            <h5>Weaknesses</h5>
+            @for(weakness of monster.weaknesses; track $index){
+            <div class="d-flex gap-3 justify-content-between">
+                <div class="py-1">
+                    <span>{{weakness.element.element}}</span>
+                    @if(weakness.weaknessCondition){
+                    <span> ({{weakness.weaknessCondition}})</span>
+                    }
+                </div>
+                <div class="weakness-stars py-1 d-flex gap-1">
+                    @for( i of [].constructor(weakness.stars); track $index){
+                    <span><i class="fa-solid fa-star star"></i></span>
+                    }
+                </div>
             </div>
             }
 
         </div>
     </div>
+    <!-- MONSTER DETAILS END -->
+
+
+    <!-- MONSTER HIT ZONES -->
+    <div class="mt-4">
+        <h4>Hit zones</h4>
+        <div>
+
+
+
+            <table mat-table [dataSource]="monster.hitZones" class="mat-elevation-z8 my-3 motion-values-table">
+
+                <!--- Note that these columns can be defined in any order.
+                          The actual rendered columns are set as a property on the row definition" -->
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="name" class="white">
+                    <th mat-header-cell *matHeaderCellDef> Hit zone </th>
+                    <td mat-cell *matCellDef="let element">{{element.hitZone}} </td>
+                </ng-container>
+
+                <!-- Hits Column -->
+                <ng-container matColumnDef="sever">
+                    <th mat-header-cell *matHeaderCellDef> Sever </th>
+                    <td mat-cell *matCellDef="let element">{{element.sever}}</td>
+                </ng-container>
+
+                <!-- Stun Column -->
+                <ng-container matColumnDef="blunt">
+                    <th mat-header-cell *matHeaderCellDef> Blunt </th>
+                    <td mat-cell *matCellDef="let element">{{element.blunt}}</td>
+                </ng-container>
+
+                <!-- Exhaust Column -->
+                <ng-container matColumnDef="shot">
+                    <th mat-header-cell *matHeaderCellDef> Shot </th>
+                    <td mat-cell *matCellDef="let element">{{element.shot}}</td>
+                </ng-container>
+
+                <!-- Exhaust Column -->
+                <ng-container matColumnDef="fire">
+                    <th mat-header-cell *matHeaderCellDef> <img src="assets/img/ElementType1.png" alt=""></th>
+                    <td mat-cell *matCellDef="let element">{{element.fire}}</td>
+                </ng-container>
+
+                <!-- Exhaust Column -->
+                <ng-container matColumnDef="water">
+                    <th mat-header-cell *matHeaderCellDef> <img src="assets/img/ElementType2.png" alt=""> </th>
+                    <td mat-cell *matCellDef="let element">{{element.water}}</td>
+                </ng-container>
+
+                <!-- Exhaust Column -->
+                <ng-container matColumnDef="thunder">
+                    <th mat-header-cell *matHeaderCellDef> <img src="assets/img/ElementType3.png" alt=""> </th>
+                    <td mat-cell *matCellDef="let element">{{element.thunder}}</td>
+                </ng-container>
+
+                <!-- Exhaust Column -->
+                <ng-container matColumnDef="ice">
+                    <th mat-header-cell *matHeaderCellDef> <img src="assets/img/ElementType4.png" alt=""> </th>
+                    <td mat-cell *matCellDef="let element">{{element.ice}}</td>
+                </ng-container>
+
+                <!-- Exhaust Column -->
+                <ng-container matColumnDef="dragon">
+                    <th mat-header-cell *matHeaderCellDef> <img src="assets/img/ElementType5.png" alt=""> </th>
+                    <td mat-cell *matCellDef="let element">{{element.dragon}}</td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+        </div>
+    </div>
+
+    <!-- END MONSTER HIT ZONES -->
+
+    <!-- MONSTER QUEST APPEARANCE -->
+
+    <div>
+        <h4>Quests</h4>
+        <app-quests [monsterId]="monsterId" />
+    </div>
+    <!-- MONSTER QUEST APPEARANCE END -->
+
+
     }
-
-    <app-quests [monsterId]="monsterId" />
-
-
-
-
-
 
 
 

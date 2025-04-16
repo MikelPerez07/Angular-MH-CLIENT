@@ -1,13 +1,25 @@
 table {
     border-radius: 5px;
+    border-bottom: none;
 }
 
-td,
-th {
-    padding-left: 1rem;
-    padding-right: 1rem;
+.main-container {
+    padding: 0;
 }
 
-th {
+th,
+tr,
+td {
+    color: white;
+    border-color: white;
+    background-color: var(--black-secondary-bg);
     text-align: center;
+}
+
+.td-start {
+    text-align: start;
+}
+
+tr:last-child {
+    border: none;
 }
