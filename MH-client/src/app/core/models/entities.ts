@@ -12,17 +12,17 @@ export interface Monster {
 
 }
 
-export interface HitZone{
-    id?:number;
-    hitZone:string;
-    sever:number;
-    blunt:number;
-    shot:number;
-    fire:number;
-    water:number;
-    thunder:number;
-    ice:number;
-    dragon:number;
+export interface HitZone {
+    id?: number;
+    hitZone: string;
+    sever: number;
+    blunt: number;
+    shot: number;
+    fire: number;
+    water: number;
+    thunder: number;
+    ice: number;
+    dragon: number;
 }
 
 export interface MonsterWeakness {
@@ -63,6 +63,7 @@ export interface Weapon {
     rarity: number;
     rawAttack: number;
     displayAttack: number;
+    affinity: number;
     sharpnesses: WeaponSharpness[];
     craftable: number;
     previous?: Weapon;

@@ -1,5 +1,11 @@
 <div class="d-flex gap-1">
     @for(i of [].constructor(3);track $index){
-    <div>{{getSlotValue($index)}}</div>
+    <div>
+        @if(getSlotValue($index)!="-"){
+        <img src="assets/img/slot_size_{{getSlotValue($index)}}.png" width="25px" alt="">
+        }@else{
+        <span>-</span>
+        }
+    </div>
     }
 </div>

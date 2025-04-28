@@ -1,0 +1,6 @@
+.rarity-container {
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 0.25rem;
+    width: fit-content;
+}

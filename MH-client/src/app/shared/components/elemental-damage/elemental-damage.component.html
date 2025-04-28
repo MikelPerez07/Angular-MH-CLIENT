@@ -1,0 +1,8 @@
+@if(elementDamage!=0){
+<div class="d-flex align-items-center">
+
+    <span [ngStyle]="{
+        'opacity' : 'elementHidden ? 0.5 : 1'
+    }">{{elementDamage}}</span> <img src="assets/img/ElementType{{element}}.png" alt="">
+</div>
+}

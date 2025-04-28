@@ -1,0 +1,55 @@
+<div class="main-container my-3 p-3">
+
+
+    <div class="d-flex flex-column justify-content-between flex-md-row">
+
+        <div class="d-flex gap-3">
+            <div>
+                <!-- Weapon name -->
+                <h2 class="weapon-name">{{weapon.name}}</h2>
+                <!-- Weapon type -->
+                <p class="weapon-type">{{weapon.type.type}}</p>
+                <!-- Weapon slots -->
+                <app-equipment-slot [slot]="weapon.slots" />
+            </div>
+            <div>
+                <!-- Weapon rarity -->
+                <app-rarity [rarity]="weapon.rarity" />
+            </div>
+        </div>
+
+        <!-- Weapon attack,afinity and element -->
+        <div class="d-flex flex-column">
+            <!-- weapon attack -->
+            <div class="d-flex justify-content-center flex-column">
+                <h5>{{weapon.rawAttack}}</h5>
+            </div>
+            <!-- weapon Affinity -->
+            <app-affinity [affinity]="weapon.affinity" />
+
+            <!-- Weapon elemental damage -->
+            <app-elemental-damage [element]="weapon.element.id" [elementDamage]="weapon.elementalDamage"
+                [elementHidden]="weapon.elementHidden" />
+
+
+        </div>
+
+        <!-- Weapon habilities -->
+        <div class="d-flex flex-column">
+            @for(skill of weapon.skills; track $index){
+            <a [routerLink]="['skill/:id']">{{skill.skill.name}} {{skill.level}}</a>
+            }
+
+        </div>
+
+
+        <div>
+            <!-- Weapon img -->
+            <img appNoImage src="" alt="" width="150px">
+        </div>
+    </div>
+
+
+
+
+</div>

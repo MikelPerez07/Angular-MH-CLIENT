@@ -138,6 +138,7 @@ export class WeaponsComponent implements OnInit, OnDestroy {
         rarity: 5,
         rawAttack: 100,
         displayAttack: 120,
+        affinity: 5,
         sharpnesses: this.sharpnesses,
         craftable: 1,
         upgradeMaterials: [],

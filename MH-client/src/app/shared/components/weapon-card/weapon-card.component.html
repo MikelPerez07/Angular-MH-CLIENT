@@ -48,16 +48,7 @@
       </div>
     </div>
   </div>
-  <div class="rarity-container " [ngClass]="{
-    'rarity1': weaponData.rarity === 1,
-     'rarity2': weaponData.rarity === 2,
-    'rarity3': weaponData.rarity === 3,
-     'rarity4': weaponData.rarity === 4,
-    'rarity5': weaponData.rarity === 5,
-     'rarity6': weaponData.rarity === 6,
-    'rarity7': weaponData.rarity === 7,
-     'rarity8': weaponData.rarity === 8,
-  }">
-    <span>{{weaponData.rarity | rarity}}</span>
+  <div class="rarity-container ">
+    <app-rarity [rarity]="weaponData.rarity" />
   </div>
 </div>

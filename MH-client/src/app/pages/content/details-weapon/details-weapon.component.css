@@ -28,7 +28,7 @@ tr,
 td {
     color: white;
     border-color: white;
-    background-color: black;
+    background-color: var(--black-secondary-bg);
 }
 
 .mat-column-hits,

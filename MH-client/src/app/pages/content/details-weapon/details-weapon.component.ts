@@ -9,10 +9,11 @@ import { NoImageDirective } from '../../../shared/directives/no-image.directive'
 import { WeaponCardComponent } from '../../../shared/components/weapon-card/weapon-card.component';
 import { WeaponTreeIconComponent } from '../../../shared/components/weapon-tree-icon/weapon-tree-icon.component';
 import { NgClass, NgStyle } from '@angular/common';
+import { WeaponInformationComponent } from '../../../shared/components/weapon-information/weapon-information.component';
 
 @Component({
   selector: 'app-details-weapon',
-  imports: [MatTabsModule, MatTableModule, NoImageDirective, WeaponTreeIconComponent, NgClass, NgStyle],
+  imports: [MatTabsModule, MatTableModule, NoImageDirective, WeaponTreeIconComponent, NgClass, NgStyle, WeaponInformationComponent],
   templateUrl: './details-weapon.component.html',
   styleUrl: './details-weapon.component.css'
 })

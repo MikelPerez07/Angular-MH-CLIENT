@@ -4,15 +4,8 @@
         <!-- Tab that shows the weapon details -->
         <mat-tab label="Details">
 
-            <div class="d-flex py-3">
-                <div>
-                    <img appNoImage src="" alt="Imagen del arma" class="weapon-image">
-                </div>
-                <div>
+            <app-weapon-information [weapon]="weapon" />
 
-                </div>
-
-            </div>
 
         </mat-tab>
         <!-- Tab that shows the motion values of the weapon type -->
